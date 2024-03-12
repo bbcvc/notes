@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: 前端知识点
-      link: /front-end
+      link: /front-end/css
     - theme: alt
       text: AI 知识分享
-      link: /ai
+      link: /ai/
 
 features:
   - title: Feature A

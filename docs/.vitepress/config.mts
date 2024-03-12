@@ -7,20 +7,63 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: '前端', link: '/front-end' },
-      { text: 'AI', link: '/ai' }
+      { text: '首页', link: '/' },
+      { text: '前端', link: '/front-end/css' },
+      { text: 'AI', link: '/ai/' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: '前端', link: '/front-end' },
-          { text: 'AI', link: '/ai' }
-        ]
-      }
-    ],
+    sidebar: {
+      '/front-end/': [
+        {
+          text: '基础',
+          items: [
+            {
+              text: 'CSS',
+              link: '/front-end/css'
+            },
+            {
+              text: 'javaScript',
+              link: '/front-end/js'
+            },
+            {
+              text: '浏览器网络相关',
+              link: '/front-end/browser'
+            }
+          ]
+        },
+        {
+          text: '框架',
+          items: [
+            {
+              text: 'Vue2.x',
+              link: '/front-end/vue2'
+            },
+            {
+              text: 'React',
+              link: '/front-end/react'
+            }
+          ]
+        },
+        {
+          text: '其他',
+          items: [
+            {
+              text: '移动端',
+              link: '/front-end/mobile'
+            },
+            {
+              text: 'node',
+              link: '/front-end/node'
+            }
+          ]
+        }
+      ],
+      '/ai/': [
+        {
+          text: '名次释义'
+        }
+      ]
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/bbcvc' }
