@@ -7,6 +7,9 @@ export default defineConfig({
   themeConfig: {
     logo: 'https://public-imgs-bucket.s3.bitiful.net/avatar.jpg',
     // https://vitepress.dev/reference/default-theme-config
+    search: {
+      provider: 'local'
+    },
     nav: [
       { text: '首页', link: '/' },
       { text: '前端', link: '/front-end/css', activeMatch: `^/front-end/` },
