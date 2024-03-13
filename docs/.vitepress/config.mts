@@ -10,6 +10,7 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
+    lastUpdated: true,
     nav: [
       { text: '首页', link: '/' },
       { text: '前端', link: '/front-end/css', activeMatch: `^/front-end/` },
