@@ -11,7 +11,7 @@ outline: deep
 通过 v-model
 VUE 实现双向数据绑定的原理就是利用了 Object.defineProperty() 这个方法重新定义了对象获取属性值(get)和设置属性值(set)的操作来实现的。
 
-```
+```js
 // 依赖收集
 // 简化版
 var obj = { }
@@ -73,7 +73,7 @@ console.log(obj.data)
 - 父子组件传参如上, v-bind : v-on @
 - 兄弟组件传参:(通过 EventBus 事件总线实现)
 
-```
+```js
 // 1. 新建eventBus.js
 import Vue from 'vue'
 export default new Vue
@@ -143,7 +143,7 @@ seo 关系到网站排名, vue 搭建 spa 做前后端分离不好做 seo, 可�
 
 - 先设置 requireAuth:
 
-```
+```js
 routes = [
     {
         name: 'detail',
@@ -161,7 +161,7 @@ routes = [
 
 - 再配置 router.beforeEach:
 
-```
+```js
 router.beforeEach((from, to, next) => {
     if (to.meta.requireAuth) { // 判断跳转的路由是否需要登录
         if (store.state.token) { // vuex.state判断token是否存在
@@ -206,7 +206,7 @@ router.beforeEach((from, to, next) => {
 
 为了简化，Vue 允许你以一个工厂函数的方式定义你的组件，这个工厂函数会异步解析你的组件定义。Vue 只有在这个组件需要被渲染的时候才会触发该工厂函数，且会把结果缓存起来供未来重渲染
 
-```
+```js
 Vue.component(
   'async-webpack-example',
   // 这个 `import` 函数会返回一个 `Promise` 对象。
