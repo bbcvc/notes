@@ -14,7 +14,7 @@ hero:
       text: AI 知识分享
       link: /ai/
   image:
-    src: https://vitepress.dev/vitepress-logo-large.webp
+    src: ./banner.png
     alt: bbcvc
 
 features:
