@@ -10,8 +10,17 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
+    editLink: {
+      pattern: 'https://github.com/bbcvc/notes/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页面'
+    },
     lastUpdated: {
-      text: '最后更新时间'
+      text: '最后更新于'
+    },
+    outlineTitle: '页面导航',
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
     },
     nav: [
       { text: '首页', link: '/' },

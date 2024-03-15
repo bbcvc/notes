@@ -12,7 +12,7 @@ hero:
       link: /front-end/css
     - theme: alt
       text: AI 知识分享
-      link: /ai
+      link: /ai/
   image:
     src: ./banner.webp
     alt: bbcvc
