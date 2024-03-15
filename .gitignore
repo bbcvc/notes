@@ -1,1 +1,9 @@
 /node_modules
+**/.DS_Store
+
+# rollup.js default build output
+dist/
+
+# vitepress build output
+.vitepress/dist
+.vitepress/cache
