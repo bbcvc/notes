@@ -598,7 +598,7 @@ function fetch(method, url, data) {
 - 中文占 2 个字节（byte） 中文里标点也占 2 个字节（byte） 英文里的子母不分大小写，一个子母占 1 个字节（字节） 英文里的标点占 1 个字节。 1 字节（byte）=8 位（bits）
 - 当任何数字在进行位运算时 js 内部会将其转换成 32 位有符号整型
 
-### 41. [this 指向](https://juejin.im/post/5c049e6de51d45471745eb98)：
+### 41. [this 指向](https://juejin.im/post/5c049e6de51d45471745eb98)
 
 - 谁调用了方法，该方法的 this 就指向谁;
 - 优先级：箭头函数 > new 绑定 > 显示绑定 > 隐式绑定

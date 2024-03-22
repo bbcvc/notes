@@ -44,7 +44,7 @@ outline: deep
 
 在无状态组件(如函数式组件)中也能操作 state 以及其他 react 特性, 通过 useState
 
-### 7. redux 和 vuex 以及 dva：
+### 7. redux 和 vuex 以及 dva
 
 - redux: 通过 store 存储，通过 action 唯一更改，reducer 描述如何更改。dispatch 一个 action
 - dva: 基于 redux，结合 redux-saga 等中间件进行封装
