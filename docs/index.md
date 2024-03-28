@@ -18,12 +18,12 @@ hero:
     alt: bbcvc
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 前端
+    details: 整理当下前端的知识宝典，for前端工程师
+  - title: Artificial Intelligence(AI)
+    details: 如何使用好AI，是面向未来的能力
+  - title: 更多...
+    details: 感兴趣请访问我的博客👉[网络日志](https://www.cl96.top/)
 ---
 
 <style>
