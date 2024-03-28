@@ -38,7 +38,7 @@ export default defineConfig({
               link: '/front-end/css'
             },
             {
-              text: 'javaScript',
+              text: 'JavaScript',
               link: '/front-end/js'
             },
             {

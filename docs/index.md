@@ -20,10 +20,16 @@ hero:
 features:
   - title: 前端
     details: 整理当下前端的知识宝典，for前端工程师
+    link: /front-end/css
+    linkText: 查看
   - title: Artificial Intelligence(AI)
     details: 如何使用好AI，是面向未来的能力
+    link: /ai/
+    linkText: 查看
   - title: 更多...
-    details: 感兴趣请访问我的博客👉[网络日志](https://www.cl96.top/)
+    details: 感兴趣请点此，访问我的博客
+    link: https://cl96.top
+    linkText: More...
 ---
 
 <style>
