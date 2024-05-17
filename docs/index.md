@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: 笔记
-  text: 前端⚡️AI知识分享
+  text: 前端✨AI知识分享
   tagline: 为学日益，为道日损。
   actions:
     - theme: brand
