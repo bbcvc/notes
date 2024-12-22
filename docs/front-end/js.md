@@ -40,7 +40,7 @@ hw.next()
 
 ### 3. 手写 Promise 实现
 
-```
+```js
 class MyPromise {
   constructor(executor) {
     this.state = 'pending'; // 初始状态

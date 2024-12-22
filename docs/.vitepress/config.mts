@@ -25,7 +25,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '前端', link: '/front-end/css', activeMatch: `^/front-end/` },
-      { text: 'AI', link: '/ai/' }
+      { text: 'AI', link: '/ai/basic' }
     ],
 
     sidebar: {
@@ -101,7 +101,8 @@ export default defineConfig({
       ],
       '/ai/': [
         {
-          text: 'AI 基础',
+          text: '基础概念',
+          link: '/ai/basic'
         },
         {
           text: '竞品分析',
