@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# css 相关
+# CSS（Cascading Style Sheets）
 
 ### 1. 万能居中
 

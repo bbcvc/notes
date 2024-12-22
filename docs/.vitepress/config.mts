@@ -42,6 +42,10 @@ export default defineConfig({
               link: '/front-end/js'
             },
             {
+              text: 'TypeScript',
+              link: '/front-end/ts'
+            },
+            {
               text: '浏览器网络相关',
               link: '/front-end/browser'
             }
@@ -51,13 +55,30 @@ export default defineConfig({
           text: '框架',
           items: [
             {
-              text: 'Vue2.x',
-              link: '/front-end/vue2'
-            },
-            {
               text: 'React',
               link: '/front-end/react'
-            }
+            },
+            {
+              text: 'Vue3',
+              link: '/front-end/vue3'
+            },
+            {
+              text: 'Vue2',
+              link: '/front-end/vue2'
+            },
+          ]
+        },
+        {
+          text: '工程化',
+          items: [
+            {
+              text: 'vite',
+              link: '/front-end/vite'
+            },
+            {
+              text: 'webpack',
+              link: '/front-end/webpack'
+            },
           ]
         },
         {
@@ -68,7 +89,11 @@ export default defineConfig({
               link: '/front-end/mobile'
             },
             {
-              text: 'node',
+              text: '客户端',
+              link: '/front-end/pc'
+            },
+            {
+              text: 'Node.js',
               link: '/front-end/node'
             }
           ]
@@ -76,7 +101,11 @@ export default defineConfig({
       ],
       '/ai/': [
         {
-          text: '名次释义'
+          text: 'AI 基础',
+        },
+        {
+          text: '竞品分析',
+          link: '/ai/products'
         }
       ]
     },

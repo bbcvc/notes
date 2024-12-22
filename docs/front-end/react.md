@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# react 相关
+# React.js
 
 ### 1. [新旧生命周期](https://segmentfault.com/a/1190000016617400)
 

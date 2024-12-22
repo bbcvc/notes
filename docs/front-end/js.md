@@ -1,7 +1,7 @@
 ---
 outline: deep
 ---
-# JS 相关
+# JavaScript
 
 ### 1. ES5 和 ES6 继承方式区别
 
@@ -40,16 +40,90 @@ hw.next()
 
 ### 3. 手写 Promise 实现
 
-```js
-var myPromise = new Promise((resolve, reject) => {
-  // 需要执行的代码
-  ...
-  if (/* 异步执行成功 */) {
-    resolve(value)
-  } else if (/* 异步执行失败 */) {
-    reject(error)
+```
+class MyPromise {
+  constructor(executor) {
+    this.state = 'pending'; // 初始状态
+    this.value = undefined; // 成功的值
+    this.reason = undefined; // 失败的原因
+    this.onFulfilledCallbacks = []; // 成功的回调
+    this.onRejectedCallbacks = []; // 失败的回调
+
+    const resolve = (value) => {
+      // 状态只能从 pending 改变，且一旦改变不可再变
+      if (this.state === 'pending') {
+        this.state = 'fulfilled';
+        this.value = value;
+        // 执行所有成功的回调
+        this.onFulfilledCallbacks.forEach((callback) => callback());
+      }
+    };
+
+    const reject = (reason) => {
+      if (this.state === 'pending') {
+        this.state = 'rejected';
+        this.reason = reason;
+        // 执行所有失败的回调
+        this.onRejectedCallbacks.forEach((callback) => callback());
+      }
+    };
+
+    try {
+      executor(resolve, reject); // 执行传入的 executor
+    } catch (error) {
+      reject(error); // 如果出错，则直接执行 reject
+    }
   }
-})
+
+  then(onFulfilled, onRejected) {
+    // 支持链式调用，返回一个新的 Promise
+    return new MyPromise((resolve, reject) => {
+      if (this.state === 'fulfilled') {
+        // 保证异步执行
+        setTimeout(() => {
+          try {
+            const result = onFulfilled(this.value);
+            resolve(result);
+          } catch (error) {
+            reject(error);
+          }
+        });
+      } else if (this.state === 'rejected') {
+        setTimeout(() => {
+          try {
+            const result = onRejected(this.reason);
+            resolve(result);
+          } catch (error) {
+            reject(error);
+          }
+        });
+      } else if (this.state === 'pending') {
+        // 如果是 pending 状态，保存回调
+        this.onFulfilledCallbacks.push(() => {
+          setTimeout(() => {
+            try {
+              const result = onFulfilled(this.value);
+              resolve(result);
+            } catch (error) {
+              reject(error);
+            }
+          });
+        });
+
+        this.onRejectedCallbacks.push(() => {
+          setTimeout(() => {
+            try {
+              const result = onRejected(this.reason);
+              resolve(result);
+            } catch (error) {
+              reject(error);
+            }
+          });
+        });
+      }
+    });
+  }
+}
 
 myPromise.then((value) => {
   // 成功后调用, 使用value值
