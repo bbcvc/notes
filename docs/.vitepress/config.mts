@@ -117,5 +117,8 @@ export default defineConfig({
   },
   head: [
     ['link', {rel: 'icon', type: 'image/svg+xml', href: '/logo-mini.svg'}]
-  ]
+  ],
+  sitemap: {
+    hostname: 'https://notes.cl96.top'
+  }
 })
