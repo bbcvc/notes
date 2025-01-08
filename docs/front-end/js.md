@@ -603,14 +603,8 @@ fetch(url, {
 - fetch 是 ajax 替代品，基于 promise。
 - 类似于 jquey ajax，但不是 ajax 封装，而是原生 js,，没有使用 XHR 对象
 - 比 ajax 方便，但仍然不完善，建议使用 axios 库
-- fetch 有而 axios 没有的问题：
-  - 兼容性问题
-  - 默认不带 cookie，需要手动设置 credentials
-  - 跨域问题，需要手动设置 mode
-  - 返回 400、500 不识别为 reject
-  - 无法 abort 和 timeout
-- 用 XHR 实现 fetch:
 
+- 用 XHR 实现 fetch:
 ```js
 // 先实现ajax
 function ajax(method,url,data,suc,fail) {
