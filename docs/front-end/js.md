@@ -242,22 +242,50 @@ function cloneObj (o) {
 ### 13. 封装 JSONP
 
 ```js
-function jsonp ({url, param, callback}) {
+function jsonp(url, params = {}, callbackName = 'callback') {
   return new Promise((resolve, reject) => {
-    var script = document.createElement('script')
-    window.callback = function (data) {
-      resolve(data)
-      document.body.removeChild('script')
-    }
-    var param = {...param, callback}
-    var arr = []
-    for (let key in param) {
-      arr.push(`${key}=${param[key]}`)
-    }
-    script.src = `${url}?${arr.join('&')}`
-    document.body.appendChild(script)
-  })
+    // 生成一个唯一的回调函数名称
+    const callbackFuncName = `jsonpCallback_${Date.now()}`;
+    
+    // 动态添加回调函数到全局对象
+    window[callbackFuncName] = (data) => {
+      resolve(data);
+      // 清理创建的脚本和全局回调函数
+      document.body.removeChild(script);
+      delete window[callbackFuncName];
+    };
+
+    // 将参数拼接到 URL
+    params[callbackName] = callbackFuncName;
+    const queryString = Object.entries(params)
+      .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+      .join('&');
+    const scriptUrl = `${url}?${queryString}`;
+
+    // 创建一个 script 标签
+    const script = document.createElement('script');
+    script.src = scriptUrl;
+    script.onerror = () => {
+      reject(new Error('JSONP request failed'));
+      // 清理脚本标签和全局回调函数
+      document.body.removeChild(script);
+      delete window[callbackFuncName];
+    };
+
+    // 将 script 添加到页面
+    document.body.appendChild(script);
+  });
 }
+
+// 示例使用
+jsonp('https://example.com/api', { foo: 'bar' })
+  .then((data) => {
+    console.log('JSONP response:', data);
+  })
+  .catch((error) => {
+    console.error('JSONP error:', error);
+  });
+
 ```
 
 ### 14. 手动实现 map(forEach 以及 filter 也类似)
